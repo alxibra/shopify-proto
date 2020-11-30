@@ -1,0 +1,14 @@
+
+syntax="proto3";
+
+package shopify;
+option go_package = ".;pb";
+import "credential.proto";
+
+message ProductRequest {
+  message Query {
+    repeated uint64 id = 1;
+  }
+  Credential credential = 1;
+  Query query = 2;
+}

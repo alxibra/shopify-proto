@@ -1,0 +1,15 @@
+
+syntax="proto3";
+
+package shopify;
+option go_package = ".;pb";
+import "products.proto";
+import "product.proto";
+import "products_request.proto";
+import "product_request.proto";
+
+service Shopify {
+  rpc GetProducts(ProductsRequest) returns(Products) {}
+  rpc GetProduct(ProductRequest) returns(Product) {}
+}
+

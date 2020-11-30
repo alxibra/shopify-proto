@@ -1,0 +1,75 @@
+syntax="proto3";
+
+package shopify;
+option go_package = ".;pb";
+
+message Product {
+  int64 id = 1;
+  string title = 2;
+  string body_html = 3;
+  string vendor = 4;
+  string product_type = 5;
+  string created_at = 6;
+  string handle = 7;
+  string updated_at = 8;
+  string published_at = 9;
+  string template_suffix = 10;
+  string status = 11;
+  string published_scope = 12;
+  string tags = 13;
+  string admin_graphql_api_id = 14;
+
+  message Variant {
+    int64 id = 1;
+    string title = 2;
+    string price = 3;
+    string sku = 4;
+    uint32 position = 5;
+    string inventory_policy = 6;
+    string compare_at_price = 7;
+    string fulfillment_service = 8;
+    string inventory_management = 9;
+    string option1 = 10;
+    string option2 = 11;
+    string option3 = 12;
+    string created_at = 13;
+    string updated_at = 14;
+    bool taxable = 15;
+    string barcode = 16;
+    uint32 grams = 17;
+    int64 image_id = 18;
+    double weight = 19;
+    string weight_unit = 20;
+    int64 inventory_item_id = 21;
+    uint32 inventory_quantity = 22;
+    uint32 old_inventory_quantity = 23;
+    bool requires_shipping = 24;
+    string admin_graphql_api_id = 25;
+  }
+  repeated Variant  variants = 15;
+
+  message Option {
+    uint64 id = 1;
+    uint64 product_id = 2;
+    string name = 3;
+    uint32 position = 4;
+    repeated string values = 5;
+  }
+  repeated Option options = 16;
+
+  message Image {
+    uint64 id  = 1;
+    uint32 position  = 2;
+    string created_at = 3;
+    string updated_at = 4;
+    string alt = 5;
+    uint32 width = 6;
+    uint32 height = 7;
+    string src = 8;
+    repeated uint32 variant_ids = 9;
+    string admin_graphql_api_id = 10;
+  }
+  repeated  Image images = 17;
+
+  Image image = 18;
+}

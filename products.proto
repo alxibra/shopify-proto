@@ -1,0 +1,9 @@
+syntax="proto3";
+
+package shopify;
+import "product.proto";
+option go_package = ".;pb";
+
+message Products {
+  repeated Product products = 1;
+}
