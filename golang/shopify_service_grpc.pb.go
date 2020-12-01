@@ -31,7 +31,7 @@ func NewShopifyClient(cc grpc.ClientConnInterface) ShopifyClient {
 
 func (c *shopifyClient) GetProducts(ctx context.Context, in *ProductsRequest, opts ...grpc.CallOption) (*Products, error) {
 	out := new(Products)
-	err := c.cc.Invoke(ctx, "/shopify.Shopify/GetProducts", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/pb.Shopify/GetProducts", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -40,7 +40,7 @@ func (c *shopifyClient) GetProducts(ctx context.Context, in *ProductsRequest, op
 
 func (c *shopifyClient) GetProduct(ctx context.Context, in *ProductRequest, opts ...grpc.CallOption) (*Product, error) {
 	out := new(Product)
-	err := c.cc.Invoke(ctx, "/shopify.Shopify/GetProduct", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/pb.Shopify/GetProduct", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -82,7 +82,7 @@ func _Shopify_GetProducts_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/shopify.Shopify/GetProducts",
+		FullMethod: "/pb.Shopify/GetProducts",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ShopifyServer).GetProducts(ctx, req.(*ProductsRequest))
@@ -100,7 +100,7 @@ func _Shopify_GetProduct_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/shopify.Shopify/GetProduct",
+		FullMethod: "/pb.Shopify/GetProduct",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ShopifyServer).GetProduct(ctx, req.(*ProductRequest))
@@ -109,7 +109,7 @@ func _Shopify_GetProduct_Handler(srv interface{}, ctx context.Context, dec func(
 }
 
 var _Shopify_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "shopify.Shopify",
+	ServiceName: "pb.Shopify",
 	HandlerType: (*ShopifyServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

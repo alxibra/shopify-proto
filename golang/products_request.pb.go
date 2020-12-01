@@ -25,17 +25,17 @@ const (
 // of the legacy proto package is being used.
 const _ = proto.ProtoPackageIsVersion4
 
-type ProductRequest struct {
+type ProductsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Credential *Credential           `protobuf:"bytes,1,opt,name=credential,proto3" json:"credential,omitempty"`
-	Query      *ProductRequest_Query `protobuf:"bytes,2,opt,name=query,proto3" json:"query,omitempty"`
+	Credential *Credential            `protobuf:"bytes,1,opt,name=credential,proto3" json:"credential,omitempty"`
+	Query      *ProductsRequest_Query `protobuf:"bytes,2,opt,name=query,proto3" json:"query,omitempty"`
 }
 
-func (x *ProductRequest) Reset() {
-	*x = ProductRequest{}
+func (x *ProductsRequest) Reset() {
+	*x = ProductsRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_products_request_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -43,13 +43,13 @@ func (x *ProductRequest) Reset() {
 	}
 }
 
-func (x *ProductRequest) String() string {
+func (x *ProductsRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ProductRequest) ProtoMessage() {}
+func (*ProductsRequest) ProtoMessage() {}
 
-func (x *ProductRequest) ProtoReflect() protoreflect.Message {
+func (x *ProductsRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_products_request_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -61,26 +61,26 @@ func (x *ProductRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ProductRequest.ProtoReflect.Descriptor instead.
-func (*ProductRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ProductsRequest.ProtoReflect.Descriptor instead.
+func (*ProductsRequest) Descriptor() ([]byte, []int) {
 	return file_products_request_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *ProductRequest) GetCredential() *Credential {
+func (x *ProductsRequest) GetCredential() *Credential {
 	if x != nil {
 		return x.Credential
 	}
 	return nil
 }
 
-func (x *ProductRequest) GetQuery() *ProductRequest_Query {
+func (x *ProductsRequest) GetQuery() *ProductsRequest_Query {
 	if x != nil {
 		return x.Query
 	}
 	return nil
 }
 
-type ProductRequest_Query struct {
+type ProductsRequest_Query struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -88,8 +88,8 @@ type ProductRequest_Query struct {
 	Ids []uint64 `protobuf:"varint,1,rep,packed,name=ids,proto3" json:"ids,omitempty"`
 }
 
-func (x *ProductRequest_Query) Reset() {
-	*x = ProductRequest_Query{}
+func (x *ProductsRequest_Query) Reset() {
+	*x = ProductsRequest_Query{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_products_request_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -97,13 +97,13 @@ func (x *ProductRequest_Query) Reset() {
 	}
 }
 
-func (x *ProductRequest_Query) String() string {
+func (x *ProductsRequest_Query) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ProductRequest_Query) ProtoMessage() {}
+func (*ProductsRequest_Query) ProtoMessage() {}
 
-func (x *ProductRequest_Query) ProtoReflect() protoreflect.Message {
+func (x *ProductsRequest_Query) ProtoReflect() protoreflect.Message {
 	mi := &file_products_request_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -115,12 +115,12 @@ func (x *ProductRequest_Query) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ProductRequest_Query.ProtoReflect.Descriptor instead.
-func (*ProductRequest_Query) Descriptor() ([]byte, []int) {
+// Deprecated: Use ProductsRequest_Query.ProtoReflect.Descriptor instead.
+func (*ProductsRequest_Query) Descriptor() ([]byte, []int) {
 	return file_products_request_proto_rawDescGZIP(), []int{0, 0}
 }
 
-func (x *ProductRequest_Query) GetIds() []uint64 {
+func (x *ProductsRequest_Query) GetIds() []uint64 {
 	if x != nil {
 		return x.Ids
 	}
@@ -131,19 +131,18 @@ var File_products_request_proto protoreflect.FileDescriptor
 
 var file_products_request_proto_rawDesc = []byte{
 	0x0a, 0x16, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x73, 0x5f, 0x72, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x07, 0x73, 0x68, 0x6f, 0x70, 0x69, 0x66,
-	0x79, 0x1a, 0x10, 0x63, 0x72, 0x65, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x61, 0x6c, 0x2e, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x22, 0x95, 0x01, 0x0a, 0x0e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x33, 0x0a, 0x0a, 0x63, 0x72, 0x65, 0x64, 0x65, 0x6e,
-	0x74, 0x69, 0x61, 0x6c, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x13, 0x2e, 0x73, 0x68, 0x6f,
-	0x70, 0x69, 0x66, 0x79, 0x2e, 0x43, 0x72, 0x65, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x61, 0x6c, 0x52,
-	0x0a, 0x63, 0x72, 0x65, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x61, 0x6c, 0x12, 0x33, 0x0a, 0x05, 0x71,
-	0x75, 0x65, 0x72, 0x79, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x73, 0x68, 0x6f,
-	0x70, 0x69, 0x66, 0x79, 0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x52, 0x05, 0x71, 0x75, 0x65, 0x72, 0x79,
-	0x1a, 0x19, 0x0a, 0x05, 0x51, 0x75, 0x65, 0x72, 0x79, 0x12, 0x10, 0x0a, 0x03, 0x69, 0x64, 0x73,
-	0x18, 0x01, 0x20, 0x03, 0x28, 0x04, 0x52, 0x03, 0x69, 0x64, 0x73, 0x42, 0x06, 0x5a, 0x04, 0x2e,
-	0x3b, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x73, 0x74, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x02, 0x70, 0x62, 0x1a, 0x10, 0x63, 0x72,
+	0x65, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x61, 0x6c, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x8d,
+	0x01, 0x0a, 0x0f, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x12, 0x2e, 0x0a, 0x0a, 0x63, 0x72, 0x65, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x61, 0x6c,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0e, 0x2e, 0x70, 0x62, 0x2e, 0x43, 0x72, 0x65, 0x64,
+	0x65, 0x6e, 0x74, 0x69, 0x61, 0x6c, 0x52, 0x0a, 0x63, 0x72, 0x65, 0x64, 0x65, 0x6e, 0x74, 0x69,
+	0x61, 0x6c, 0x12, 0x2f, 0x0a, 0x05, 0x71, 0x75, 0x65, 0x72, 0x79, 0x18, 0x02, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x19, 0x2e, 0x70, 0x62, 0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x73, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x52, 0x05, 0x71, 0x75,
+	0x65, 0x72, 0x79, 0x1a, 0x19, 0x0a, 0x05, 0x51, 0x75, 0x65, 0x72, 0x79, 0x12, 0x10, 0x0a, 0x03,
+	0x69, 0x64, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x04, 0x52, 0x03, 0x69, 0x64, 0x73, 0x42, 0x06,
+	0x5a, 0x04, 0x2e, 0x3b, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -160,13 +159,13 @@ func file_products_request_proto_rawDescGZIP() []byte {
 
 var file_products_request_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_products_request_proto_goTypes = []interface{}{
-	(*ProductRequest)(nil),       // 0: shopify.ProductRequest
-	(*ProductRequest_Query)(nil), // 1: shopify.ProductRequest.Query
-	(*Credential)(nil),           // 2: shopify.Credential
+	(*ProductsRequest)(nil),       // 0: pb.ProductsRequest
+	(*ProductsRequest_Query)(nil), // 1: pb.ProductsRequest.Query
+	(*Credential)(nil),            // 2: pb.Credential
 }
 var file_products_request_proto_depIdxs = []int32{
-	2, // 0: shopify.ProductRequest.credential:type_name -> shopify.Credential
-	1, // 1: shopify.ProductRequest.query:type_name -> shopify.ProductRequest.Query
+	2, // 0: pb.ProductsRequest.credential:type_name -> pb.Credential
+	1, // 1: pb.ProductsRequest.query:type_name -> pb.ProductsRequest.Query
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
@@ -182,7 +181,7 @@ func file_products_request_proto_init() {
 	file_credential_proto_init()
 	if !protoimpl.UnsafeEnabled {
 		file_products_request_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ProductRequest); i {
+			switch v := v.(*ProductsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -194,7 +193,7 @@ func file_products_request_proto_init() {
 			}
 		}
 		file_products_request_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ProductRequest_Query); i {
+			switch v := v.(*ProductsRequest_Query); i {
 			case 0:
 				return &v.state
 			case 1:

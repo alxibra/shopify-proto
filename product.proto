@@ -1,6 +1,6 @@
 syntax="proto3";
 
-package shopify;
+package pb;
 option go_package = ".;pb";
 
 message Product {
@@ -45,6 +45,7 @@ message Product {
     uint32 old_inventory_quantity = 23;
     bool requires_shipping = 24;
     string admin_graphql_api_id = 25;
+    uint64 product_id = 26;
   }
   repeated Variant  variants = 15;
 
@@ -68,6 +69,7 @@ message Product {
     string src = 8;
     repeated uint32 variant_ids = 9;
     string admin_graphql_api_id = 10;
+    uint64 product_id = 11;
   }
   repeated  Image images = 17;
 
