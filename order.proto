@@ -16,7 +16,6 @@ message Order {
   bool test = 10;
   string total_price = 11;
   string subtotal_price = 12;
-  string subtotal_price = 13;
   uint32 total_weight = 14;
   string total_tax = 15;
   bool taxes_included = 16;
@@ -62,14 +61,13 @@ message Order {
   TotalLineItemsPriceSet total_line_items_price_set = 65;
   TotalDiscountsSet total_discounts_set = 66;
   TotalShippingPriceSet total_shipping_price_set = 67;
-  SubTotalPriceSet total_shipping_price_set = 68;
+  SubTotalPriceSet subtotal_price_set = 68;
   TotalPriceSet total_price_set = 69;
   TotalTaxSet total_tax_set = 70;
   repeated LineItem line_items = 71;
   repeated Fulfillment fulfillments = 72;
   repeated Refund refunds = 73;
   string total_tip_received = 74;
-  string total_tip_received = 75;
   OriginalTotalDutiesSet original_total_duties_set = 76;
   CurrentTotalDutiesSet current_total_duties_set = 77;
   string admin_graphql_api_id = 78;
@@ -93,7 +91,7 @@ message Order {
     string price = 2;
     float rate = 3;
     PriceSet price_set = 4;
-    TotalDiscountsSet = 5
+    TotalDiscountsSet total_discount_set = 5;
   }
 
   message PriceSet {
@@ -288,6 +286,20 @@ message Order {
   message PresentmentMoney {
     string amount = 1;
     string currency_code = 2;
+  }
+
+  message Property {
+    string name = 1;
+    string value = 2;
+  }
+
+  message Duty {
+    uint64 id = 1;
+    string harmonize_system_code = 2;
+    string country_code_of_original = 3;
+    ShopMoney shop_money = 4;
+    PresentmentMoney presentment_money = 5;
+    repeated TaxLine tax_lines = 6;
   }
 }
 
