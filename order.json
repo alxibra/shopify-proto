@@ -1,0 +1,234 @@
+{
+    "id": 2828681412696,
+    "email": "technology@bobobobo.com",
+    "closed_at": null,
+    "created_at": "2020-12-05T21:40:10+07:00",
+    "updated_at": "2020-12-05T21:40:15+07:00",
+    "number": 7955,
+    "note": null,
+    "token": "d326a0467b39a86166ad253efa3f6ff7",
+    "gateway": "",
+    "test": false,
+    "total_price": "599000.00",
+    "subtotal_price": "599000.00",
+    "total_weight": 0,
+    "total_tax": "0.00",
+    "taxes_included": false,
+    "currency": "IDR",
+    "financial_status": "paid",
+    "confirmed": true,
+    "total_discounts": "0.00",
+    "total_line_items_price": "599000.00",
+    "cart_token": null,
+    "buyer_accepts_marketing": false,
+    "name": "MBM8955",
+    "referring_site": null,
+    "landing_site": null,
+    "cancelled_at": null,
+    "cancel_reason": null,
+    "total_price_usd": "42.37",
+    "checkout_token": null,
+    "reference": null,
+    "user_id": null,
+    "location_id": null,
+    "source_identifier": null,
+    "source_url": null,
+    "processed_at": "2020-12-05T21:40:10+07:00",
+    "device_id": null,
+    "phone": null,
+    "customer_locale": null,
+    "app_id": 1963784,
+    "browser_ip": null,
+    "landing_site_ref": null,
+    "order_number": 8955,
+    "discount_applications": [],
+    "discount_codes": [],
+    "note_attributes": [],
+    "payment_gateway_names": [],
+    "processing_method": "",
+    "checkout_id": null,
+    "source_name": "1963784",
+    "fulfillment_status": null,
+    "tax_lines": [],
+    "tags": "",
+    "contact_email": "technology@bobobobo.com",
+    "order_status_url": "https://www.morebymorello.com/26073116/orders/d326a0467b39a86166ad253efa3f6ff7/authenticate?key=a5042587fe2b17593d2597543fec1863",
+    "presentment_currency": "IDR",
+    "total_line_items_price_set": {
+        "shop_money": {
+            "amount": "599000.00",
+            "currency_code": "IDR"
+        },
+        "presentment_money": {
+            "amount": "599000.00",
+            "currency_code": "IDR"
+        }
+    },
+    "total_discounts_set": {
+        "shop_money": {
+            "amount": "0.00",
+            "currency_code": "IDR"
+        },
+        "presentment_money": {
+            "amount": "0.00",
+            "currency_code": "IDR"
+        }
+    },
+    "total_shipping_price_set": {
+        "shop_money": {
+            "amount": "0.00",
+            "currency_code": "IDR"
+        },
+        "presentment_money": {
+            "amount": "0.00",
+            "currency_code": "IDR"
+        }
+    },
+    "subtotal_price_set": {
+        "shop_money": {
+            "amount": "599000.00",
+            "currency_code": "IDR"
+        },
+        "presentment_money": {
+            "amount": "599000.00",
+            "currency_code": "IDR"
+        }
+    },
+    "total_price_set": {
+        "shop_money": {
+            "amount": "599000.00",
+            "currency_code": "IDR"
+        },
+        "presentment_money": {
+            "amount": "599000.00",
+            "currency_code": "IDR"
+        }
+    },
+    "total_tax_set": {
+        "shop_money": {
+            "amount": "0.00",
+            "currency_code": "IDR"
+        },
+        "presentment_money": {
+            "amount": "0.00",
+            "currency_code": "IDR"
+        }
+    },
+    "line_items": [
+        {
+            "id": 5993026093144,
+            "variant_id": 33193363046488,
+            "title": "24Bottles Clima Bottle Velvet Magnolia 500ml",
+            "quantity": 1,
+            "sku": "24BottlesClimaBottleVelvetMagnolia500ml",
+            "variant_title": null,
+            "vendor": "24Bottles",
+            "fulfillment_service": "manual",
+            "product_id": 4703212470360,
+            "requires_shipping": true,
+            "taxable": false,
+            "gift_card": false,
+            "name": "24Bottles Clima Bottle Velvet Magnolia 500ml",
+            "variant_inventory_management": "shopify",
+            "properties": [],
+            "product_exists": true,
+            "fulfillable_quantity": 1,
+            "grams": 500,
+            "price": "599000.00",
+            "total_discount": "0.00",
+            "fulfillment_status": null,
+            "price_set": {
+                "shop_money": {
+                    "amount": "599000.00",
+                    "currency_code": "IDR"
+                },
+                "presentment_money": {
+                    "amount": "599000.00",
+                    "currency_code": "IDR"
+                }
+            },
+            "total_discount_set": {
+                "shop_money": {
+                    "amount": "0.00",
+                    "currency_code": "IDR"
+                },
+                "presentment_money": {
+                    "amount": "0.00",
+                    "currency_code": "IDR"
+                }
+            },
+            "discount_allocations": [],
+            "duties": [],
+            "admin_graphql_api_id": "gid://shopify/LineItem/5993026093144",
+            "tax_lines": []
+        }
+    ],
+    "fulfillments": [],
+    "refunds": [],
+    "total_tip_received": "0.0",
+    "original_total_duties_set": null,
+    "current_total_duties_set": null,
+    "admin_graphql_api_id": "gid://shopify/Order/2828681412696",
+    "shipping_lines": [],
+    "shipping_address": {
+        "first_name": "yossi",
+        "address1": "jl. praja dalam c no 12",
+        "phone": "081294650127",
+        "city": "Jakarta Selatan",
+        "zip": "12240",
+        "province": null,
+        "country": "Indonesia",
+        "last_name": "tobing",
+        "address2": null,
+        "company": null,
+        "latitude": -6.2520808,
+        "longitude": 106.7805891,
+        "name": "yossi tobing",
+        "country_code": "ID",
+        "province_code": null
+    },
+    "customer": {
+        "id": 451658416160,
+        "email": "technology@bobobobo.com",
+        "accepts_marketing": false,
+        "created_at": "2018-02-13T15:41:43+07:00",
+        "updated_at": "2020-12-05T21:40:12+07:00",
+        "first_name": "PT",
+        "last_name": "Bobobobo",
+        "orders_count": 655,
+        "state": "disabled",
+        "total_spent": "870621180.00",
+        "last_order_id": 2828681412696,
+        "note": "",
+        "verified_email": true,
+        "multipass_identifier": null,
+        "tax_exempt": false,
+        "phone": null,
+        "tags": "",
+        "last_order_name": "MBM8955",
+        "currency": "IDR",
+        "accepts_marketing_updated_at": "2019-09-03T15:24:36+07:00",
+        "marketing_opt_in_level": null,
+        "tax_exemptions": [],
+        "admin_graphql_api_id": "gid://shopify/Customer/451658416160",
+        "default_address": {
+            "id": 3960123555928,
+            "customer_id": 451658416160,
+            "first_name": "yossi",
+            "last_name": "tobing",
+            "company": null,
+            "address1": "jl. praja dalam c no 12",
+            "address2": null,
+            "city": "Jakarta Selatan",
+            "province": null,
+            "country": "Indonesia",
+            "zip": "12240",
+            "phone": "081294650127",
+            "name": "yossi tobing",
+            "province_code": null,
+            "country_code": "ID",
+            "country_name": "Indonesia",
+            "default": true
+        }
+    }
+}

@@ -1,0 +1,293 @@
+syntax="proto3";
+
+package pb;
+option go_package = ".;pb";
+
+message Order {
+  uint64 id = 1;
+  string email = 2;
+  string closed_at = 3;
+  string created_at = 4;
+  string updated_at = 5;
+  uint64 number = 6;
+  string note = 7;
+  string token = 8;
+  string gateway = 9;
+  bool test = 10;
+  string total_price = 11;
+  string subtotal_price = 12;
+  string subtotal_price = 13;
+  uint32 total_weight = 14;
+  string total_tax = 15;
+  bool taxes_included = 16;
+  string currency = 17;
+  string financial_status = 18;
+  bool confirmed = 19;
+  string total_discounts = 20;
+  string total_line_items_price = 21;
+  string cart_token = 22;
+  bool buyer_accepts_marketing = 32;
+  string name = 33;
+  string referring_site = 34;
+  string landing_site = 35;
+  string cancelled_at = 36;
+  string cancel_reason = 37;
+  string total_price_usd = 38;
+  string checkout_token = 39;
+  string reference = 40;
+  uint64 user_id = 41;
+  uint64 location_id = 42;
+  string source_identifier = 43;
+  string source_url = 44;
+  string processed_at = 45;
+  string phone = 46;
+  string customer_locale = 47;
+  uint64 app_id = 48;
+  string browser_ip = 49;
+  string landing_site_ref = 50;
+  uint64 order_number = 51;
+  repeated DiscountApplication discount_applications = 52;
+  repeated DiscountCode discount_codes = 53;
+  repeated NoteAttribute note_attributes = 54;
+  repeated string payment_gateway_names = 55;
+  string processing_method = 56;
+  uint64 checkout_id = 57;
+  uint64 source_name = 58;
+  string fulfillment_status = 59;
+  repeated TaxLine tax_lines = 60;
+  string tags = 61;
+  string contact_email = 62;
+  string order_status_url = 63;
+  string presentment_currency = 64;
+  TotalLineItemsPriceSet total_line_items_price_set = 65;
+  TotalDiscountsSet total_discounts_set = 66;
+  TotalShippingPriceSet total_shipping_price_set = 67;
+  SubTotalPriceSet total_shipping_price_set = 68;
+  TotalPriceSet total_price_set = 69;
+  TotalTaxSet total_tax_set = 70;
+  repeated LineItem line_items = 71;
+  repeated Fulfillment fulfillments = 72;
+  repeated Refund refunds = 73;
+  string total_tip_received = 74;
+  string total_tip_received = 75;
+  OriginalTotalDutiesSet original_total_duties_set = 76;
+  CurrentTotalDutiesSet current_total_duties_set = 77;
+  string admin_graphql_api_id = 78;
+  repeated ShippingLine shipping_lines  = 79;
+  ShippingAddress shipping_address  = 80;
+  Customer customer = 81;
+
+  message DiscountApplication {
+    string type = 1;
+    string title = 2;
+    string description = 3;
+    string value = 4;
+    string value_type = 5;
+    string allocation_method = 6;
+    string target_selection = 7;
+    string target_type = 8;
+  }
+
+  message TaxLine {
+    string title = 1;
+    string price = 2;
+    float rate = 3;
+    PriceSet price_set = 4;
+    TotalDiscountsSet = 5
+  }
+
+  message PriceSet {
+    ShopMoney shop_money = 1;
+    PresentmentMoney presentment_money = 2;
+  }
+
+  message DiscountCode {
+    string code = 1;
+    string amount = 2;
+    string type = 3;
+  }
+
+  message NoteAttribute {
+    string name = 1;
+    string value = 2;
+  }
+
+  message TotalLineItemsPriceSet {
+    ShopMoney shop_money = 1;
+    PresentmentMoney presentment_money = 2;
+  }
+
+  message TotalDiscountsSet {
+    ShopMoney shop_money = 1;
+    PresentmentMoney presentment_money = 2;
+  }
+
+  message TotalShippingPriceSet {
+    ShopMoney shop_money = 1;
+    PresentmentMoney presentment_money = 2;
+  }
+
+  message SubTotalPriceSet {
+    ShopMoney shop_money = 1;
+    PresentmentMoney presentment_money = 2;
+  }
+
+  message TotalPriceSet {
+    ShopMoney shop_money = 1;
+    PresentmentMoney presentment_money = 2;
+  }
+
+  message TotalTaxSet {
+    ShopMoney shop_money = 1;
+    PresentmentMoney presentment_money = 2;
+  }
+
+  message LineItem {
+    uint64 id = 1;
+    uint64 variant_id = 2;
+    uint32 quantity = 3;
+    string sku = 4;
+    string variant_title = 5;
+    string vendor = 6;
+    string fulfillment_service = 7;
+    uint64 product_id = 8;
+    bool taxable = 9;
+    bool gift_card = 10;
+    string name = 11;
+    string variant_inventory_management = 12;
+    repeated Property properties = 13;
+    bool product_exists = 14;
+    uint32 fulfillable_quantity = 15;
+    uint32 grams = 16;
+    string price = 17;
+    string total_discount = 18;
+    string fulfillment_status = 19;
+    PriceSet price_set = 20;
+    TotalDiscountsSet total_discount_set = 21;
+    repeated DiscountAllocation discount_allocations = 22;
+    repeated Duty duties = 23;
+    string admin_graphql_api_id = 24;
+    repeated TaxLine tax_lines = 25;
+
+    message DiscountAllocation {
+      string amount = 1;
+      uint32 discount_application_index = 2;
+      AmountSet amount_set = 3;
+      message AmountSet {
+        ShopMoney shop_money = 1;
+        PresentmentMoney presentment_money = 2;
+      }
+    }
+  }
+
+  message Fulfillment {
+    string created_at = 1;
+    uint64 id = 2;
+    uint64 order_id = 3;
+    string status = 4;
+    string tracking_company = 5;
+    string tracking_number = 6;
+    string updated_at = 7;
+  }
+
+  message Refund {
+    uint64 id = 1;
+    uint64 order_id = 2;
+    string created_at = 3;
+    string note = 4;
+    uint64 user_id = 5;
+    string processed_at = 6;
+    repeated RefundItemLine refund_item_lines = 7;
+
+    message RefundItemLine {
+      uint64 line_item_id = 1;
+      uint32 quantity = 2;
+    }
+  }
+
+  message OriginalTotalDutiesSet {
+    ShopMoney shop_money = 1;
+    PresentmentMoney presentment_money = 2;
+  }
+
+  message CurrentTotalDutiesSet {
+    ShopMoney shop_money = 1;
+    PresentmentMoney presentment_money = 2;
+  }
+
+  message ShippingLine {
+    string code = 1;
+    string price = 2;
+    string title = 3;
+  }
+
+  message ShippingAddress {
+    string first_name = 1;
+    string last_name = 2;
+    string address1 = 3;
+    string phone = 4;
+    string city = 5;
+    string zip = 6;
+    string province = 7;
+    string country = 8;
+    string address2 = 9;
+    string company = 10;
+    float latitude = 11;
+    float longitude = 12;
+    string name = 13;
+    string country_code = 14;
+    string province_code = 15;
+  }
+
+  message Customer {
+    uint64 id = 1;
+    string email = 2;
+    bool accepts_marketing = 3;
+    string created_at = 4;
+    string updated_at = 5;
+    string first_name = 6;
+    string last_name = 7;
+    uint32 orders_count = 8;
+    string state = 9;
+    string total_spent = 10;
+    uint64 last_order_id = 12;
+    string note = 13;
+    bool verified_email  = 14;
+    string multipass_identifier  = 15;
+    bool tax_exempt = 16;
+    string phone = 17;
+    string tags = 18;
+    string last_order_name = 19;
+    string currency = 20;
+    string accepts_marketing_updated_at = 21;
+    string marketing_opt_in_level = 22;
+    string admin_graphql_api_id = 23;
+    DefaultAddress default_address = 24;
+
+    message DefaultAddress {
+      uint64 id = 1;
+      uint64 customer_id = 2;
+      string first_name = 3;
+      string last_name = 4;
+      string company = 5;
+      string zip = 6;
+      string phone = 7;
+      string name = 8;
+      string province_code = 9;
+      string country_code = 10;
+      string country_name = 11;
+      bool default = 12;
+    }
+  }
+
+  message ShopMoney {
+    string amount = 1;
+    string currency_code = 2;
+  }
+
+  message PresentmentMoney {
+    string amount = 1;
+    string currency_code = 2;
+  }
+}
+
