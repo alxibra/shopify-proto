@@ -1,0 +1,15 @@
+
+syntax="proto3";
+
+package pb;
+option go_package = ".;pb";
+import "credential.proto";
+
+message OrderRequest {
+  message Path {
+    uint64 id = 1;
+  }
+  Credential credential = 1;
+  Path path = 2;
+}
+

@@ -16,6 +16,7 @@ module Pb
 
       rpc :GetProducts, ::Pb::ProductsRequest, ::Pb::Products
       rpc :GetProduct, ::Pb::ProductRequest, ::Pb::Product
+      rpc :GetOrder, ::Pb::OrderRequest, ::Pb::Order
     end
 
     Stub = Service.rpc_stub_class

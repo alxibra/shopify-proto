@@ -67,7 +67,7 @@ message Product {
     uint32 width = 6;
     uint32 height = 7;
     string src = 8;
-    repeated uint32 variant_ids = 9;
+    repeated uint64 variant_ids = 9;
     string admin_graphql_api_id = 10;
     uint64 product_id = 11;
   }

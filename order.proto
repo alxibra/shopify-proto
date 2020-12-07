@@ -4,6 +4,10 @@ package pb;
 option go_package = ".;pb";
 
 message Order {
+ OrderDetail order = 1;
+}
+
+message OrderDetail {
   uint64 id = 1;
   string email = 2;
   string closed_at = 3;
@@ -74,6 +78,7 @@ message Order {
   repeated ShippingLine shipping_lines  = 79;
   ShippingAddress shipping_address  = 80;
   Customer customer = 81;
+  uint64 device_id = 82;
 
   message DiscountApplication {
     string type = 1;
@@ -166,6 +171,8 @@ message Order {
     repeated Duty duties = 23;
     string admin_graphql_api_id = 24;
     repeated TaxLine tax_lines = 25;
+    bool requires_shipping = 26;
+    string title = 27;
 
     message DiscountAllocation {
       string amount = 1;
@@ -261,6 +268,7 @@ message Order {
     string marketing_opt_in_level = 22;
     string admin_graphql_api_id = 23;
     DefaultAddress default_address = 24;
+    repeated string tax_exemptions = 25;
 
     message DefaultAddress {
       uint64 id = 1;
@@ -275,6 +283,11 @@ message Order {
       string country_code = 10;
       string country_name = 11;
       bool default = 12;
+      string address1 = 13;
+      string address2 = 14;
+      string city = 15;
+      string province = 16;
+      string country = 17;
     }
   }
 

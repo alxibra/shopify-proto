@@ -19,6 +19,7 @@ const _ = grpc.SupportPackageIsVersion6
 type ShopifyClient interface {
 	GetProducts(ctx context.Context, in *ProductsRequest, opts ...grpc.CallOption) (*Products, error)
 	GetProduct(ctx context.Context, in *ProductRequest, opts ...grpc.CallOption) (*Product, error)
+	GetOrder(ctx context.Context, in *OrderRequest, opts ...grpc.CallOption) (*Order, error)
 }
 
 type shopifyClient struct {
@@ -47,12 +48,22 @@ func (c *shopifyClient) GetProduct(ctx context.Context, in *ProductRequest, opts
 	return out, nil
 }
 
+func (c *shopifyClient) GetOrder(ctx context.Context, in *OrderRequest, opts ...grpc.CallOption) (*Order, error) {
+	out := new(Order)
+	err := c.cc.Invoke(ctx, "/pb.Shopify/GetOrder", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ShopifyServer is the server API for Shopify service.
 // All implementations must embed UnimplementedShopifyServer
 // for forward compatibility
 type ShopifyServer interface {
 	GetProducts(context.Context, *ProductsRequest) (*Products, error)
 	GetProduct(context.Context, *ProductRequest) (*Product, error)
+	GetOrder(context.Context, *OrderRequest) (*Order, error)
 	mustEmbedUnimplementedShopifyServer()
 }
 
@@ -65,6 +76,9 @@ func (*UnimplementedShopifyServer) GetProducts(context.Context, *ProductsRequest
 }
 func (*UnimplementedShopifyServer) GetProduct(context.Context, *ProductRequest) (*Product, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetProduct not implemented")
+}
+func (*UnimplementedShopifyServer) GetOrder(context.Context, *OrderRequest) (*Order, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetOrder not implemented")
 }
 func (*UnimplementedShopifyServer) mustEmbedUnimplementedShopifyServer() {}
 
@@ -108,6 +122,24 @@ func _Shopify_GetProduct_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Shopify_GetOrder_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(OrderRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ShopifyServer).GetOrder(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pb.Shopify/GetOrder",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ShopifyServer).GetOrder(ctx, req.(*OrderRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Shopify_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "pb.Shopify",
 	HandlerType: (*ShopifyServer)(nil),
@@ -119,6 +151,10 @@ var _Shopify_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetProduct",
 			Handler:    _Shopify_GetProduct_Handler,
+		},
+		{
+			MethodName: "GetOrder",
+			Handler:    _Shopify_GetOrder_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

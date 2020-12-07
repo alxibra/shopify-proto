@@ -69,7 +69,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :width, :uint32, 6
       optional :height, :uint32, 7
       optional :src, :string, 8
-      repeated :variant_ids, :uint32, 9
+      repeated :variant_ids, :uint64, 9
       optional :admin_graphql_api_id, :string, 10
       optional :product_id, :uint64, 11
     end
